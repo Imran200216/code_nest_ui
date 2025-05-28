@@ -1,5 +1,8 @@
 name: code_nest_ui
-description: "A new Flutter project."
+description: >-
+  A reusable Flutter UI component library featuring adaptive switches, 
+  customizable alert dialogs, cached network images, and other handy widgets 
+  designed to accelerate your app development.
 version: 0.0.1
 homepage:
 
@@ -22,6 +25,12 @@ dependencies:
 
   # logger
   logger: ^2.5.0
+
+  # drop down text field
+  dropdown_button2: ^2.3.9
+
+
+
 
 dev_dependencies:
   flutter_test:

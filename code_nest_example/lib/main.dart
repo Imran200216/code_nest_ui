@@ -1,5 +1,4 @@
-import 'package:code_nest_example/nav/code_nest_app_bar_example.dart';
-import 'package:code_nest_example/nav/code_nest_bottom_nav_example.dart';
+import 'package:code_nest_example/switch/code_nest_switch_example.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Code Nest Widgets',
-      home: CodeNestBottomNavExample(),
+      home: CodeNestSwitchExample(),
     );
   }
 }
