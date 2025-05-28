@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CodeNextIconTextBtn extends StatelessWidget {
-  const CodeNextIconTextBtn({super.key});
+class CodeNestNavigationRail extends StatelessWidget {
+  const CodeNestNavigationRail({super.key});
 
   @override
   Widget build(BuildContext context) {

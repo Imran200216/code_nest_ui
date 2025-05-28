@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
 
 class CodeNestNetworkImage extends StatelessWidget {
-  const CodeNestNetworkImage({super.key});
+  final String imageUrl;
+  final double? width;
+  final double? height;
+  final BoxFit fit;
+
+  const CodeNestNetworkImage({
+    super.key,
+    required this.imageUrl,
+    this.width,
+    this.height,
+    this.fit = BoxFit.cover,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Image.network(
+      imageUrl,
+      width: width,
+      height: height,
+      fit: fit,
+    );
   }
 }
