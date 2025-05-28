@@ -17,6 +17,12 @@ class CodeNestTextFormField extends StatelessWidget {
   final Color? errorColor;
   final BorderRadius? borderRadius;
   final EdgeInsets? contentPadding;
+  final Color? prefixIconColor;
+  final double? prefixIconSize;
+  final TextStyle? inputStyle;
+  final TextStyle? hintStyle;
+  final TextStyle? errorStyle;
+  final TextStyle? labelStyle;
 
   const CodeNestTextFormField({
     super.key,
@@ -36,33 +42,31 @@ class CodeNestTextFormField extends StatelessWidget {
     this.errorColor = const Color(0xFFD32F2F),
     this.borderRadius,
     this.contentPadding,
+    this.prefixIconColor,
+    this.prefixIconSize,
+    this.inputStyle,
+    this.hintStyle,
+    this.errorStyle,
+    this.labelStyle,
   });
 
   @override
   Widget build(BuildContext context) {
-    final labelStyle = TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w500,
-      color: textColor,
-    );
+    final labelTextStyle =
+        labelStyle ??
+        TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: textColor);
 
-    final inputStyle = TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.w500,
-      color: textColor,
-    );
+    final inputTextStyle =
+        inputStyle ??
+        TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: textColor);
 
-    final hintStyle = TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.w500,
-      color: hintColor,
-    );
+    final hintTextStyle =
+        hintStyle ??
+        TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: hintColor);
 
-    final errorStyle = TextStyle(
-      fontSize: 11,
-      fontWeight: FontWeight.w500,
-      color: errorColor,
-    );
+    final errorTextStyle =
+        errorStyle ??
+        TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: errorColor);
 
     final border = OutlineInputBorder(
       borderRadius: borderRadius ?? BorderRadius.circular(10),
@@ -83,12 +87,12 @@ class CodeNestTextFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (labelText != null) ...[
-          Text(labelText!, style: labelStyle),
+          Text(labelText!, style: labelTextStyle),
           const SizedBox(height: 6),
         ],
         TextFormField(
           autofillHints: autoFillHints,
-          style: inputStyle,
+          style: inputTextStyle,
           cursorColor: primaryColor,
           controller: controller,
           keyboardType: keyboardType,
@@ -98,9 +102,13 @@ class CodeNestTextFormField extends StatelessWidget {
           onChanged: onChanged,
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: hintStyle,
-            errorStyle: errorStyle,
-            prefixIcon: Icon(prefixIcon, color: hintColor),
+            hintStyle: hintTextStyle,
+            errorStyle: errorTextStyle,
+            prefixIcon: Icon(
+              prefixIcon,
+              color: prefixIconColor,
+              size: prefixIconSize,
+            ),
             border: border,
             enabledBorder: border,
             focusedBorder: focusedBorder,

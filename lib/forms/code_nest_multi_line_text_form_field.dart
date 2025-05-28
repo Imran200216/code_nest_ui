@@ -15,6 +15,12 @@ class CodeNestMultiLineTextFormField extends StatelessWidget {
   final Color? errorColor;
   final BorderRadius borderRadius;
   final EdgeInsets? contentPadding;
+  final Color? prefixIconColor;
+  final double? prefixIconSize;
+  final TextStyle? inputStyle;
+  final TextStyle? hintStyle;
+  final TextStyle? errorStyle;
+  final TextStyle? labelStyle;
 
   const CodeNestMultiLineTextFormField({
     super.key,
@@ -32,32 +38,35 @@ class CodeNestMultiLineTextFormField extends StatelessWidget {
     this.errorColor = const Color(0xFFD32F2F),
     this.borderRadius = const BorderRadius.all(Radius.circular(10)),
     this.contentPadding,
+    this.prefixIconColor,
+    this.prefixIconSize,
+    this.inputStyle,
+    this.hintStyle,
+    this.errorStyle,
+    this.labelStyle,
   });
 
   @override
   Widget build(BuildContext context) {
-    final labelStyle = TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w500,
-      color: textColor,
-    );
+    final labelTextStyle =
+        labelStyle ??
+        TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: textColor);
 
-    final inputStyle = TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.w500,
-      color: textColor,
-    );
+    final inputTextStyle =
+        inputStyle ??
+        TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: textColor);
 
-    final hintStyle = TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.w400,
-      color: hintColor,
-    );
+    final hintTextStyle =
+        hintStyle ??
+        TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: hintColor);
 
-    final errorStyle = TextStyle(
-      fontSize: 11,
-      fontWeight: FontWeight.w500,
-      color: errorColor,
+    final errorTextStyle =
+        errorStyle ??
+        TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: errorColor);
+
+    final border = OutlineInputBorder(
+      borderRadius: borderRadius ?? BorderRadius.circular(10),
+      borderSide: BorderSide(color: hintColor!),
     );
 
     OutlineInputBorder customBorder(Color borderColor, {double width = 1}) {
@@ -71,12 +80,12 @@ class CodeNestMultiLineTextFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (labelText != null) ...[
-          Text(labelText!, style: labelStyle),
+          Text(labelText!, style: labelTextStyle),
           const SizedBox(height: 6),
         ],
         TextFormField(
           controller: controller,
-          style: inputStyle,
+          style: inputTextStyle,
           cursorColor: primaryColor,
           maxLines: maxLines,
           enabled: enabled,
@@ -84,10 +93,10 @@ class CodeNestMultiLineTextFormField extends StatelessWidget {
           onChanged: onChanged,
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: hintStyle,
-            errorStyle: errorStyle,
+            hintStyle: hintTextStyle,
+            errorStyle: errorTextStyle,
             prefixIcon: prefixIcon != null
-                ? Icon(prefixIcon, color: hintColor)
+                ? Icon(prefixIcon, color: prefixIconColor, size: prefixIconSize)
                 : null,
             border: customBorder(hintColor!),
             enabledBorder: customBorder(hintColor!),

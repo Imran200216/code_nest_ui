@@ -15,6 +15,14 @@ class CodeNestPickerTextFormField extends StatelessWidget {
   final Color? errorColor;
   final BorderRadius borderRadius;
   final EdgeInsets? contentPadding;
+  final Color? prefixIconColor;
+  final double? prefixIconSize;
+  final Color? suffixIconColor;
+  final double? suffixIconSize;
+  final TextStyle? inputStyle;
+  final TextStyle? hintStyle;
+  final TextStyle? errorStyle;
+  final TextStyle? labelStyle;
 
   const CodeNestPickerTextFormField({
     super.key,
@@ -32,33 +40,33 @@ class CodeNestPickerTextFormField extends StatelessWidget {
     this.errorColor = const Color(0xFFD32F2F),
     this.borderRadius = const BorderRadius.all(Radius.circular(10)),
     this.contentPadding,
+    this.prefixIconColor,
+    this.prefixIconSize,
+    this.suffixIconColor,
+    this.suffixIconSize,
+    this.inputStyle,
+    this.hintStyle,
+    this.errorStyle,
+    this.labelStyle,
   });
 
   @override
   Widget build(BuildContext context) {
-    final labelStyle = TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w500,
-      color: textColor,
-    );
+    final labelTextStyle =
+        labelStyle ??
+        TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: textColor);
 
-    final inputStyle = TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.w500,
-      color: textColor,
-    );
+    final inputTextStyle =
+        inputStyle ??
+        TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: textColor);
 
-    final hintStyle = TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.w500,
-      color: hintColor,
-    );
+    final hintTextStyle =
+        hintStyle ??
+        TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: hintColor);
 
-    final errorStyle = TextStyle(
-      fontSize: 11,
-      fontWeight: FontWeight.w500,
-      color: errorColor,
-    );
+    final errorTextStyle =
+        errorStyle ??
+        TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: errorColor);
 
     OutlineInputBorder customBorder(Color color, {double width = 1}) {
       return OutlineInputBorder(
@@ -71,23 +79,27 @@ class CodeNestPickerTextFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (labelText != null) ...[
-          Text(labelText!, style: labelStyle),
+          Text(labelText!, style: labelTextStyle),
           const SizedBox(height: 6),
         ],
         TextFormField(
           controller: controller,
           readOnly: true,
           onTap: enabled ? onTap : null,
-          style: inputStyle,
+          style: inputTextStyle,
           validator: validator,
           cursorColor: primaryColor,
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: hintStyle,
-            errorStyle: errorStyle,
-            prefixIcon: Icon(prefixIcon, color: hintColor),
+            hintStyle: hintTextStyle,
+            errorStyle: errorTextStyle,
+            prefixIcon: Icon(
+              prefixIcon,
+              color: prefixIconColor,
+              size: prefixIconSize,
+            ),
             suffixIcon: suffixIcon != null
-                ? Icon(suffixIcon, color: hintColor)
+                ? Icon(suffixIcon, color: suffixIconColor, size: suffixIconSize)
                 : null,
             // 🔹 Added here
             border: customBorder(hintColor!),
