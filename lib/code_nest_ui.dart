@@ -36,3 +36,6 @@ export 'package:code_nest_ui/chips/code_nest_chip_exports.dart';
 
 // Code Nest Adaptive Switch
 export 'package:code_nest_ui/switch /code_nest_adaptive_switch_exports.dart';
+
+// Code Nest Spacer
+export 'package:code_nest_ui/spacer/code_nest_spacer_exports.dart';
