@@ -21,6 +21,7 @@ class CodeNestMultiLineTextFormField extends StatelessWidget {
   final TextStyle? hintStyle;
   final TextStyle? errorStyle;
   final TextStyle? labelStyle;
+  final TextInputType? keyboardType;
 
   const CodeNestMultiLineTextFormField({
     super.key,
@@ -43,26 +44,30 @@ class CodeNestMultiLineTextFormField extends StatelessWidget {
     this.inputStyle,
     this.hintStyle,
     this.errorStyle,
-    this.labelStyle,
+    this.labelStyle, this.keyboardType,
   });
 
   @override
   Widget build(BuildContext context) {
     final labelTextStyle =
         labelStyle ??
-        TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: textColor);
+            TextStyle(
+                fontSize: 14, fontWeight: FontWeight.w500, color: textColor);
 
     final inputTextStyle =
         inputStyle ??
-        TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: textColor);
+            TextStyle(
+                fontSize: 13, fontWeight: FontWeight.w500, color: textColor);
 
     final hintTextStyle =
         hintStyle ??
-        TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: hintColor);
+            TextStyle(
+                fontSize: 13, fontWeight: FontWeight.w500, color: hintColor);
 
     final errorTextStyle =
         errorStyle ??
-        TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: errorColor);
+            TextStyle(
+                fontSize: 11, fontWeight: FontWeight.w500, color: errorColor);
 
     final border = OutlineInputBorder(
       borderRadius: borderRadius ?? BorderRadius.circular(10),
@@ -84,6 +89,7 @@ class CodeNestMultiLineTextFormField extends StatelessWidget {
           const SizedBox(height: 6),
         ],
         TextFormField(
+          keyboardType: keyboardType,
           controller: controller,
           style: inputTextStyle,
           cursorColor: primaryColor,
@@ -104,7 +110,7 @@ class CodeNestMultiLineTextFormField extends StatelessWidget {
             errorBorder: customBorder(errorColor!, width: 1.2),
             focusedErrorBorder: customBorder(errorColor!, width: 1.2),
             contentPadding:
-                contentPadding ??
+            contentPadding ??
                 EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           ),
         ),

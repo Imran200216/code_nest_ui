@@ -23,6 +23,7 @@ class CodeNestPickerTextFormField extends StatelessWidget {
   final TextStyle? hintStyle;
   final TextStyle? errorStyle;
   final TextStyle? labelStyle;
+  final TextInputType? keyboardType;
 
   const CodeNestPickerTextFormField({
     super.key,
@@ -47,7 +48,7 @@ class CodeNestPickerTextFormField extends StatelessWidget {
     this.inputStyle,
     this.hintStyle,
     this.errorStyle,
-    this.labelStyle,
+    this.labelStyle, this.keyboardType,
   });
 
   @override
@@ -83,6 +84,7 @@ class CodeNestPickerTextFormField extends StatelessWidget {
           const SizedBox(height: 6),
         ],
         TextFormField(
+          keyboardType: keyboardType,
           controller: controller,
           readOnly: true,
           onTap: enabled ? onTap : null,

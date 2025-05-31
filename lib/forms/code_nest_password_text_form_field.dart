@@ -23,6 +23,7 @@ class CodeNestPasswordTextFormField extends StatefulWidget {
   final TextStyle? hintStyle;
   final TextStyle? errorStyle;
   final TextStyle? labelStyle;
+  final TextInputType? keyboardType;
 
   const CodeNestPasswordTextFormField({
     super.key,
@@ -47,6 +48,7 @@ class CodeNestPasswordTextFormField extends StatefulWidget {
     this.suffixIconColor,
     this.prefixIconSize,
     this.suffixIconSize,
+    this.keyboardType,
   });
 
   @override
@@ -115,6 +117,7 @@ class _CodeNestPasswordTextFormFieldState
           const SizedBox(height: 6),
         ],
         TextFormField(
+          keyboardType: widget.keyboardType,
           controller: widget.controller,
           style: inputTextStyle,
           cursorColor: widget.primaryColor,
