@@ -3,7 +3,7 @@ description: >-
   A reusable Flutter UI component library featuring adaptive switches, 
   customizable alert dialogs, cached network images, and other handy widgets 
   designed to accelerate your app development.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/Imran200216/code_nest_ui
 
 environment:
@@ -29,6 +29,10 @@ dependencies:
   # drop down text field
   dropdown_button2: ^2.3.9
 
+  # shimmer
+  shimmer: ^3.0.0
+
+
 
 
 
@@ -44,9 +48,23 @@ dev_dependencies:
 flutter:
 
   # To add assets to your package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+    - assets/images/Animations/
+    - assets/images/Btns/
+    - assets/images/Divider/
+    - assets/images/FormField/
+    - assets/images/Images/
+    - assets/images/Loaders/
+    - assets/images/nav/
+    - assets/images/SnackBar/
+    - assets/images/Spacer/
+    - assets/images/Switch/
+    - assets/images/Text/
+    - assets/images/ToolTip/
+    - assets/images/Validators/
+    - assets/images/Container/
+
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/to/asset-from-package

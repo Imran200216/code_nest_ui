@@ -24,10 +24,18 @@ class CodeNestImagesExample extends StatelessWidget {
             CodeNestNetworkImage(
               imageUrl:
                   "https://w7.pngwing.com/pngs/895/199/png-transparent-spider-man-heroes-download-with-transparent-background-free-thumbnail.png",
+              width: 100,
+              height: 100,
+              fit: BoxFit.contain,
             ),
 
             // Svg Image
-            CodeNestSvgImage(assetPath: "assets/svg/google.svg"),
+            CodeNestSvgImage(
+              assetPath: "assets/svg/google.svg",
+              width: 100,
+              height: 100,
+              fit: BoxFit.contain,
+            ),
 
             // Cached Network image
             CodeNestCachedNetworkImage(

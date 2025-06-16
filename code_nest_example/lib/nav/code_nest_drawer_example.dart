@@ -8,6 +8,7 @@ class CodeNestDrawerExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('CodeNest Drawer Example')),
+      // Drawer
       drawer: CodeNestDrawer(
         userName: 'John Doe',
         userEmail: 'johndoe@example.com',

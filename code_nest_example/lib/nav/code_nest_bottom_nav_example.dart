@@ -20,6 +20,7 @@ class _CodeNestBottomNavExampleState extends State<CodeNestBottomNavExample> {
 
   @override
   Widget build(BuildContext context) {
+    // Bottom Nav
     return Scaffold(
       body: _screens[_currentIndex],
       bottomNavigationBar: CodeNestBottomNav(

@@ -12,8 +12,12 @@ class CodeNestLoaderExample extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Circular Loader
             CodeNestCircularProgressLoader(
               backgroundColor: Colors.red,
+              size: 30,
+              strokeCap: StrokeCap.round,
+              strokeWidth: 30,
               color: Colors.white,
             ),
           ],

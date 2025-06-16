@@ -13,9 +13,12 @@ class CodeNestDividerExample extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           spacing: 20,
           children: [
-            // Horizontal
             // Solid horizontal divider
-            const CodeNestDivider(),
+            const CodeNestDivider(
+              direction: Axis.horizontal,
+              length: 50,
+              thickness: 1.5,
+            ),
 
             // Dashed vertical divider
             CodeNestDivider(
