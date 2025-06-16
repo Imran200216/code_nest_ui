@@ -3,7 +3,7 @@ description: >-
   A reusable Flutter UI component library featuring adaptive switches, 
   customizable alert dialogs, cached network images, and other handy widgets 
   designed to accelerate your app development.
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/Imran200216/code_nest_ui
 
 environment:
