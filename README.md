@@ -505,7 +505,7 @@ To use this package, add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  code_nest_ui: ^0.0.7
+  code_nest_ui: ^0.0.8
 ```
 
 Then run:
@@ -613,7 +613,7 @@ If you like this package, please give it a ⭐ on [GitHub](https://github.com/Im
 
 For questions or support, feel free to reach out:
 - GitHub: [@Imran200216](https://github.com/Imran200216)
-- Email: [your-email@example.com](mailto:your-email@example.com)
+- Email: [your-email@example.com](mailto:imranbabuji162002@gmail.com)
 
 ---
 
