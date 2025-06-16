@@ -505,7 +505,7 @@ To use this package, add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  code_nest_ui: ^0.0.6
+  code_nest_ui: ^0.0.7
 ```
 
 Then run:
